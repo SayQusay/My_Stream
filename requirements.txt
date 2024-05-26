@@ -2,3 +2,4 @@ streamlit
 pandas
 plost
 numpy
+st_click_detector 
