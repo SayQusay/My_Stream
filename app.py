@@ -1,8 +1,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from st_click_detector import click_detector
 
-st.write("Nama Saya Qusay")
+content = """<p><a href='#' id='Link 1'>First link</a></p>
+    <p><a href='#' id='Link 2'>Second link</a></p>
+    <a href='#' id='Image 1'><img width='20%' src='https://images.unsplash.com/photo-1565130838609-c3a86655db61?w=200'></a>
+    <a href='#' id='Image 2'><img width='20%' src='https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=200'></a>
+    """
+clicked = click_detector(content)
 
-#Header Section
-st.markdown("<h1 style='text-align: center; color:#F7F8F7;'>Your heart's rhythm reveals more than just beats</h1> <h4 style='text-align: center; color: #555;'>Unlock the SECRETS of your heart's rhythm </h4>",unsafe_allow_html=True)  
+st.markdown(f"**{clicked} clicked**" if clicked != "" else "**No click**")
