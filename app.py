@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plost
 import numpy as np
 from st_click_detector import click_detector
 
