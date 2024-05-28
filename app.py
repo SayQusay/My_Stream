@@ -46,3 +46,28 @@ elif option == "CNN Analysis":
         st.write("Here you can add the CNN + ResNet program details.")
 
         # Tambahkan kode atau deskripsi untuk CNN + ResNet Anda di sini
+        PATH = "/content/model_v1.pth"
+        model.load_state_dict(torch.load(PATH))
+        model.eval()
+
+        transform = transforms.Compose(
+        [transforms.ToTensor()])
+
+        # PAKE CODE YANG INI YAA, BUKAN YANG CELL ATAS
+def predict(image_path):
+  image = Image.open(image_path).convert('RGB')
+  image = transform(image)
+  image = image.unsqueeze(0)
+
+  with torch.no_grad():
+    output = model(image)
+    prediction = torch.max(output.data, 1)[1]
+    return prediction.item()
+
+path = '/content/drive/MyDrive/DATASET CNN MULTIMOD/temp_dataset/cancer/A_1403_1.RIGHT_CC.png'
+result = predict(path)
+
+if result == 0:
+  print('benign')
+else:
+  print('malignant')
