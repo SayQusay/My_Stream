@@ -1,30 +1,43 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 
-def main_page():
-    st.markdown("# Main page")
-    st.sidebar.markdown("Main Page")
+# Konfigurasi halaman
+st.set_page_config(page_title="CNN for Breast Cancer", layout="wide")
 
-def page2():
-    st.markdown(" Data")
-    st.sidebar.markdown("Data")
+# Buat option menu
+option = st.sidebar.selectbox("Menu", ["Home", "CNN Analysis"])
 
-def page3():
-    st.markdown("RR Detection")
-    st.sidebar.markdown("RR Detection")
+# Halaman Home
+if option == "Home":
+    st.title("Why do we use CNN instead of ANN")
+    st.write("""
+    **Too many parameters for a small image dimension.** 
+    Ex: a 28x28 MNIST image requires around 105.124 parameters that consist of input, hidden layer 1 & 2, and output layer.
+    
+    **CNN works best to extract image features automatically.** 
+    As in, it’s able to learn the most discriminative feature from raw image pixels, which is needed in the model’s training process.
+    
+    **CNN is insensitive to translation and different positions of input image.** 
+    Hence, unlike ANN, CNN could recognize patterns regardless of the position in the image. This quality is crucial to have for an accurate breast cancer classification.
+    """)
+    st.title("Project Description: CNN with ResNet")
+    st.write("""
+    The size of the breast images used are 256x256 px.
+    The total images used to train the model is 1.016 images with 507 cancerous images and 509 normal images.
+    The classifier used is ...
+    """)
 
-def page4():
-    st.markdown("HRV Analysis")
-    st.sidebar.markdown("HRV Analysis")
+# Halaman CNN Analysis
+elif option == "CNN Analysis":
+    tab1, tab2 = st.tabs(["CNN", "CNN + ResNet"])
 
-page_names_to_func = {
-    "Main Page": main_page,
-    "Data":page2,
-    "RR Detection":page3,
-    "HRV Analysis":page4,
-}
+    with tab1:
+        st.header("CNN Analysis")
+        st.write("Here you can add the CNN program details.")
 
-selected_page = st.sidebar.selectbox("Select a page", page_names_to_func.keys())
-page_names_to_func[selected_page]()
+        # Tambahkan kode atau deskripsi untuk CNN Anda di sini
 
+    with tab2:
+        st.header("CNN + ResNet Analysis")
+        st.write("Here you can add the CNN + ResNet program details.")
+
+        # Tambahkan kode atau deskripsi untuk CNN + ResNet Anda di sini
