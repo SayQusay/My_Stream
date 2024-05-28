@@ -11,7 +11,7 @@ if option == "Home":
     st.title("Why do we use CNN instead of ANN")
     st.write("""
     **Too many parameters for a small image dimension.** 
-    Ex: a 28x28 MNIST image requires around 105.124 parameters that consist of input, hidden layer 1 & 2, and output layer.
+    Ex: a 28x28 MNIST image requires around 105.124 parameters that consist of input, hidden layers 1 & 2, and output layer.
     
     **CNN works best to extract image features automatically.** 
     As in, it’s able to learn the most discriminative feature from raw image pixels, which is needed in the model’s training process.
@@ -21,9 +21,10 @@ if option == "Home":
     """)
     st.title("Project Description: CNN with ResNet")
     st.write("""
-    The size of the breast images used are 256x256 px.
+    The size of the breast images used is 256x256 px.
     The total images used to train the model is 1.016 images with 507 cancerous images and 509 normal images.
-    The classifier used is ...
+    Residual Network (ResNet) is used for the architecture, where it utilizes the concept of skip connections, where the network will learn about the residual mapping of input to output rather than the entire mapping. Hence, the gradients calculated during backpropagation are not prone to vanishing. 
+    "red-background[In summary], CNN with ResNet offers an effective yet very deep training process without degrading the model’s accuracy performance.
     """)
 
 # Halaman CNN Analysis
