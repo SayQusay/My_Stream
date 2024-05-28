@@ -27,7 +27,7 @@ if option == "Home":
     
     Residual Network (ResNet) is used for the architecture, where it utilizes the concept of skip connections, where the network will learn about the residual mapping of input to output rather than the entire mapping. Hence, the gradients calculated during backpropagation are not prone to vanishing. 
     
-    :red-background[In summary], CNN with ResNet offers an effective yet very deep training process without degrading the model’s accuracy performance.
+    :green-background[In summary], CNN with ResNet offers an effective yet very deep training process without degrading the model’s accuracy performance.
     
     """)
 
