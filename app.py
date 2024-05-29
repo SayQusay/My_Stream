@@ -11,18 +11,26 @@ option = st.sidebar.selectbox("Menu", ["Home", "CNN Analysis"])
 
 # Halaman Home
 if option == "Home":
-    st.title("Why do we use CNN instead of ANN")
+    st.title("CNN for Breast Cancer Detection")
+
+    st.subheader("It's a :red[scary] thing for women")
+    st.write("""
+    Breast cancer is the most common cancer among women in 158 of 183 countries (86%) and the leading cause of female cancer deaths in 107 of 183 countries (Omer, A.M., et al, 2023)
+    In 2020, 2.3 million women were diagnosed with breast cancer, with 685,000 deaths globally. At the end of 2020, 7.8 million women who had been diagnosed with breast cancer in the previous five years were still alive, making breast cancer the most prevalent malignancy (Allahqoli et al., 2022)
+    """)
+
+    st.subheader("Why do we use CNN instead of ANN")
     st.write("""
     **Too many parameters for a small image dimension.** 
-    Ex: a 28x28 MNIST image requires around 105.124 parameters that consist of input, hidden layers 1 & 2, and output layer.
+    For example, a 28x28 MNIST image requires around 105.124 parameters that consist of input, hidden layers 1 & 2, and output layer.
     
     **CNN works best to extract image features automatically.** 
-    As in, it’s able to learn the most discriminative feature from raw image pixels, which is needed in the model’s training process.
+    CNN can learn the most discriminative feature from raw image pixels, which is needed in the model’s training process.
     
     **CNN is insensitive to translation and different positions of input image.** 
     Hence, unlike ANN, CNN could recognize patterns regardless of the position in the image. This quality is crucial to have for an accurate breast cancer classification.
     """)
-    st.title("Project Description: CNN with ResNet")
+    st.subheader("Project Description: CNN with ResNet")
     st.write("""
     The size of the breast images used is 256x256 px.
     
