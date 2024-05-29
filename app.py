@@ -1,4 +1,7 @@
 import streamlit as st
+import torch
+from torchvision import transforms
+from PIL import Image
 
 # Konfigurasi halaman
 st.set_page_config(page_title="CNN for Breast Cancer", layout="wide")
@@ -28,48 +31,55 @@ if option == "Home":
     Residual Network (ResNet) is used for the architecture, where it utilizes the concept of skip connections, where the network will learn about the residual mapping of input to output rather than the entire mapping. Hence, the gradients calculated during backpropagation are not prone to vanishing. 
     
     :green-background[In summary], CNN with ResNet offers an effective yet very deep training process without degrading the model’s accuracy performance.
-    
     """)
 
 # Halaman CNN Analysis
 elif option == "CNN Analysis":
     tab1, tab2 = st.tabs(["CNN", "CNN + ResNet"])
 
-   #Untuk menampilkan "sesuatu" di tab1
+    # Untuk menampilkan "sesuatu" di tab1
     with tab1:
         st.header("CNN Analysis")
         st.write("Here you can add the CNN program details.")
-
         # Tambahkan kode atau deskripsi untuk CNN Anda di sini
 
-    #Untuk menampilkan "sesuatu" di tab1
+    # Untuk menampilkan "sesuatu" di tab2
     with tab2:
         st.header("CNN + ResNet Analysis")
         st.write("Here you can add the CNN + ResNet program details.")
 
-        # Tambahkan kode atau deskripsi untuk CNN + ResNet Anda di sini
+        # Load your model
         PATH = "/content/model_v1.pth"
-        model.load_state_dict(torch.load(PATH))
-        model.eval()
 
-        transform = transforms.Compose(
-        [transforms.ToTensor()])
+        # Dummy model for example purposes, replace with your actual model
+        # Example:
+        # model = YourModelClass()
+        # model.load_state_dict(torch.load(PATH))
+        # model.eval()
 
-        # PAKE CODE YANG INI YAA, BUKAN YANG CELL ATAS
+        transform = transforms.Compose([transforms.ToTensor()])
+
         def predict(image_path):
-          image = Image.open(image_path).convert('RGB')
-          image = transform(image)
-          image = image.unsqueeze(0)
+            image = Image.open(image_path).convert('RGB')
+            image = transform(image)
+            image = image.unsqueeze(0)
 
-        with torch.no_grad():
-            output = model(image)
-            prediction = torch.max(output.data, 1)[1]
-            return prediction.item()
+            with torch.no_grad():
+                output = model(image)
+                prediction = torch.max(output.data, 1)[1]
+                return prediction.item()
 
-        path = '/content/drive/MyDrive/DATASET CNN MULTIMOD/temp_dataset/cancer/A_1403_1.RIGHT_CC.png'
-        result = predict(path)
+        # File uploader
+        uploaded_file = st.file_uploader("Choose an image...", type="png")
 
-        if result == 0:
-            print('benign')
-        else:
-            print('malignant')
+        if uploaded_file is not None:
+            image_path = uploaded_file.name
+            with open(image_path, "wb") as f:
+                f.write(uploaded_file.getbuffer())
+
+            result = predict(image_path)
+            
+            if result == 0:
+                st.write('Prediction: benign')
+            else:
+                st.write('Prediction: malignant')
