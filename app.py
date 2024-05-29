@@ -64,8 +64,8 @@ if option == "Home":
     st.divider()
     st.subheader("Introducing our Community")
     content = """
-    <a href='#' id='Ardi'><img width='20%' src='https://drive.google.com/file/d/1Wsst_64VkNZgOjWTxeytkqnXssNX9B_u/view?usp=drivesdk'></a>
-    <a href='#' id='Bahari(5023211018)'><img width='20%' src='https://drive.google.com/file/d/1WpfQIouo7zFhSSq-h0P-6xlga4rf8Ljg/view?usp=drivesdk'></a>
+    <a href='#' id='Ardi'><img src='https://drive.google.com/file/d/1Wsst_64VkNZgOjWTxeytkqnXssNX9B_u/view?usp=drivesdk?w=200'></a>
+    <a href='#' id='Bahari(5023211018)'><img width='20%' src='https://drive.google.com/file/d/1WpfQIouo7zFhSSq-h0P-6xlga4rf8Ljg/view?usp=drivesdk w=200'></a>
     """
     clicked = click_detector(content)
 
