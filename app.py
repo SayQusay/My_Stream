@@ -25,13 +25,13 @@ if option == "Home":
     st.subheader("Developing :grey[technology] to make automatic detection")
     st.write("""
     Technological developments encourage the creation of more effective and efficient work systems. In the health sector, an early detection system is very much needed. Apart from making radiology work easier, experts can also more easily carry out interventions more quickly.
-         - **Automatic Detection with CNN**
+    - **Automatic Detection with CNN**
          CNNs can learn to recognize patterns and features in images that may not be visible to the human eye.
          
-         - **Tumor Segmentation**:
+    - **Tumor Segmentation**
          CNNs can be used for tumor segmentation in medical images, helping more accurately determine tumor size and location.
          
-         - **Risk Prediction**:
+    - **Risk Prediction**
          CNN-based algorithms can predict breast cancer risk by analyzing medical images and other patient data, helping doctors make clinical decisions.
     """)
     st.divider()
