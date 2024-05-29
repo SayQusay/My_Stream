@@ -64,7 +64,7 @@ elif option == "CNN Analysis":
         with torch.no_grad():
             output = model(image)
             prediction = torch.max(output.data, 1)[1]
-            return prediction.item()
+        return prediction.item()
 
         path = '/content/drive/MyDrive/DATASET CNN MULTIMOD/temp_dataset/cancer/A_1403_1.RIGHT_CC.png'
         result = predict(path)
