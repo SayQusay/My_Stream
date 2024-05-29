@@ -1,7 +1,7 @@
 import streamlit as st
 import torch
 from torchvision import transforms
-from st_click_detector import click_detector
+from PIL import image
 
 
 # Konfigurasi halaman
@@ -70,7 +70,48 @@ elif option == "CNN Analysis":
     uploaded_file = st.file_uploader("Choose an image...", type="png")
 
     if uploaded_file is not None:
-        image_path = uploaded_file.name
-        with open(image_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
+        image = Image.open(uploaded_file)
+        
+
+    col1,col2 = st.column([0.3,0.7],gap='medium')
+    
+    with col1:
+        st.markdown('''
+        **View**
+        ''')
+        view = st.radio(
+            "Choose your medical view",
+            ["MLO", "CC"],
+            index=None,
+        )
+
+        st.write("You selected:", view)
+        st.divider()
+        
+        arc = st.radio(
+            "Select your architecture network",
+            ["CNN", "ResNet18"],
+            index=None,
+        )
+        if arc == 'CNN':
+            if view == 'Mlo':
+                st.write('a')
+            else:
+                st.write('b')
+        else:
+            if view == 'Mlo':
+                st.write('C')
+            else:
+                st.write('d')
+        st.divider()
+        st.write("You selected:", arc)
+        apply = st.button("Apply",type="secondary")
+
+    with col2:
+        st.markdown('''
+        **Output Images**
+        ''')
+
+        st.image(image)
+        
        
