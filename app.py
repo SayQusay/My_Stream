@@ -27,9 +27,14 @@ if option == "Home":
     st.markdown("<h2 style='text-align: center; color: #F7F8F7;'>Developing technology to make automatic detection</h2>", unsafe_allow_html=True)
     st.write("""
     Technological developments encourage the creation of more effective and efficient work systems. In the health sector, an early detection system is very much needed. Apart from being able to make radiology work easier, experts can also more easily carry out interventions more quickly.         - Tingkat stres tanpa disadari yang memengaruhi kesejahteraan secara keseluruhan.
-         - **Automatic Detection with CNN**: CNN is used to analyze medical images from mammography, MRI, and ultrasound to detect anomalies or tumors with a high degree of accuracy. CNNs can learn to recognize patterns and features in images that may not be visible to the human eye.
-         - **Tumor Segmentation**: CNNs can be used for tumor segmentation in medical images, helping in determining tumor size and location more accurately.
-         - **Risk Prediction**: CNN-based algorithms can predict breast cancer risk based on analysis of medical images and other patient data, helping doctors make clinical decisions
+         - **Automatic Detection with CNN**
+         CNN is used to analyze medical images from mammography, MRI, and ultrasound to detect anomalies or tumors with a high degree of accuracy. CNNs can learn to recognize patterns and features in images that may not be visible to the human eye.
+         
+         - **Tumor Segmentation**:
+         CNNs can be used for tumor segmentation in medical images, helping determine tumor size and location more accurately.
+         
+         - **Risk Prediction**:
+         CNN-based algorithms can predict breast cancer risk based on analysis of medical images and other patient data, helping doctors make clinical decisions
     """)
 
     st.divider()
