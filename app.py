@@ -1,7 +1,7 @@
 import streamlit as st
 import torch
 from torchvision import transforms
-from PIL import image
+from PIL import Image
 
 
 # Konfigurasi halaman
