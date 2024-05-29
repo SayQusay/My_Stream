@@ -64,69 +64,13 @@ if option == "Home":
 
     st.divider()
     st.subheader("Introducing our Community")
-    url='https://drive.google.com/file/d/1WpfQIouo7zFhSSq-h0P-6xlga4rf8Ljg/view?usp=drivesdk'
-    col1,col2 = st.columns(2)
-    with col1:
-        st.image('Ardi.png',caption='Rahardian Asyam Zuhdi (5023211058)', width=150)  # Replace with your actual image file
-
-    with col2:
-        st.image('Qusay.png',caption='Rahardian Asyam Zuhdi (5023211058)',width=150)  # Replace with your actual image file
-    content = """
-    <a href='#' id='Ardi'><src='https://drive.google.com/file/d/1Wsst_64VkNZgOjWTxeytkqnXssNX9B_u/view?usp=drivesdk?w=200'></a>
-    <a href='#' id='Bahari(5023211018)'><img width='20%' src='https://drive.google.com/file/d/1WpfQIouo7zFhSSq-h0P-6xlga4rf8Ljg/view?usp=drivesdk w=200'></a>
-    <a href='#' id='Hari(5023211018)'><img width='20%' src=url></a>
-    """
-    clicked = click_detector(content)
-
-    st.markdown(f"**{clicked} clicked**" if clicked != "" else "**No click**")
 
 # Halaman CNN Analysis
 elif option == "CNN Analysis":
-    tab1, tab2 = st.tabs(["CNN", "CNN + ResNet"])
-
-    # Untuk menampilkan "sesuatu" di tab1
-    with tab1:
-        st.header("CNN Analysis")
-        st.write("Here you can add the CNN program details.")
-        # Tambahkan kode atau deskripsi untuk CNN Anda di sini
-
-    # Untuk menampilkan "sesuatu" di tab2
-    with tab2:
-        st.header("CNN + ResNet Analysis")
-        st.write("Here you can add the CNN + ResNet program details.")
-
-        # Load your model
-        PATH = "/content/model_v1.pth"
-
-        # Dummy model for example purposes, replace with your actual model
-        # Example:
-        # model = YourModelClass()
-        # model.load_state_dict(torch.load(PATH))
-        # model.eval()
-
-        transform = transforms.Compose([transforms.ToTensor()])
-
-        def predict(image_path):
-            image = Image.open(image_path).convert('RGB')
-            image = transform(image)
-            image = image.unsqueeze(0)
-
-            with torch.no_grad():
-                output = model(image)
-                prediction = torch.max(output.data, 1)[1]
-                return prediction.item()
-
-        # File uploader
-        uploaded_file = st.file_uploader("Choose an image...", type="png")
+    uploaded_file = st.file_uploader("Choose an image...", type="png")
 
         if uploaded_file is not None:
             image_path = uploaded_file.name
             with open(image_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
-
-            result = predict(image_path)
-            
-            if result == 0:
-                st.write('Prediction: benign')
-            else:
-                st.write('Prediction: malignant')
+       
