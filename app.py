@@ -1,7 +1,7 @@
 import streamlit as st
 import torch
 from torchvision import transforms
-from PIL import Image
+# from PIL import Image
 
 # Konfigurasi halaman
 st.set_page_config(page_title="CNN for Breast Cancer", layout="wide")
