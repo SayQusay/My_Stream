@@ -13,6 +13,8 @@ option = st.sidebar.selectbox("Menu", ["Home", "CNN Analysis"])
 # Halaman Home
 if option == "Home":
     st.title("Confronting Breast Cancer: :red[Urgent Call for Awareness]") #Headline
+    st.markdown("<h1 style='text-align: center; color: #EB455F;'>Confronting Breast Cancer: :red[Urgent Call for Awareness]</h1>", unsafe_allow_html=True)
+
 
     #Show the Urgency
     st.subheader("It's a :red[scary] thing for women")
