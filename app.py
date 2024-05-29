@@ -12,7 +12,7 @@ option = st.sidebar.selectbox("Menu", ["Home", "CNN Analysis"])
 
 # Halaman Home
 if option == "Home":
-    st.title("CNN for Breast Cancer Detection") #Headline
+    st.title("Confronting Breast Cancer: :red[Urgent Call for Awareness]") #Headline
 
     #Show the Urgency
     st.subheader("It's a :red[scary] thing for women")
