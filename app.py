@@ -94,12 +94,12 @@ elif option == "CNN Analysis":
         apply = st.button("Apply",type="secondary")
         if apply:
             if arc == 'CNN':
-                if view == 'Mlo':
+                if view == 'MLO':
                     st.write('a')
                 else:
                     st.write('b')
             else:
-                if view == 'Mlo':
+                if view == 'MLO':
                     st.write('C')
                 else:
                     st.write('d')
