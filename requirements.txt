@@ -1,4 +1,4 @@
 streamlit
 torch
 torchvision
-st_click_detector
+PIL
