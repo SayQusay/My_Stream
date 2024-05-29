@@ -14,7 +14,6 @@ if option == "Home":
     st.title("CNN for Breast Cancer Detection") #Headline
 
     #Show the Urgency
-    st.markdown("<h2 class='header'>It's a :red[scary] thing for women</h2>", unsafe_allow_html=True)
     st.subheader("It's a :red[scary] thing for women")
     st.write("""
     Breast cancer is the most common cancer among women in 158 of 183 countries (86%) and the leading cause of female cancer deaths in 107 of 183 countries (Omer, A.M., et al, 2023).
@@ -24,23 +23,22 @@ if option == "Home":
     st.divider()
 
     #What can we Do
-    st.markdown("<h2 style='text-align: center; color: #F7F8F7;'>Developing technology to make automatic detection</h2>", unsafe_allow_html=True)
+    st.subheader("Developing :grey[technology] to make automatic detection")
     st.write("""
     Technological developments encourage the creation of more effective and efficient work systems. In the health sector, an early detection system is very much needed. Apart from being able to make radiology work easier, experts can also more easily carry out interventions more quickly.         - Tingkat stres tanpa disadari yang memengaruhi kesejahteraan secara keseluruhan.
          - **Automatic Detection with CNN**
-         CNN is used to analyze medical images from mammography, MRI, and ultrasound to detect anomalies or tumors with a high degree of accuracy. CNNs can learn to recognize patterns and features in images that may not be visible to the human eye.
+         CNNs can learn to recognize patterns and features in images that may not be visible to the human eye.
          
          - **Tumor Segmentation**:
          CNNs can be used for tumor segmentation in medical images, helping determine tumor size and location more accurately.
          
          - **Risk Prediction**:
-         CNN-based algorithms can predict breast cancer risk based on analysis of medical images and other patient data, helping doctors make clinical decisions
+         CNN-based algorithms can predict breast cancer risk based on analysis of medical images and other patient data, helping doctors make clinical decisions.
     """)
 
     st.divider()
     
-    st.markdown("<h2 style='text-align: center; color: #F7F8F7;'>Why do we use CNN instead of ANN</h2>", unsafe_allow_html=True)
-    st.subheader("Why do we use CNN instead of ANN")
+    st.subheader("Why do we use :green[CNN] instead of :red[ANN]")
     st.write("""
     **Too many parameters for a small image dimension.** 
     For example, a 28x28 MNIST image requires around 105.124 parameters that consist of input, hidden layers 1 & 2, and output layer.
