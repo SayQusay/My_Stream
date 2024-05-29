@@ -35,12 +35,14 @@ if option == "Home":
 elif option == "CNN Analysis":
     tab1, tab2 = st.tabs(["CNN", "CNN + ResNet"])
 
+   #Untuk menampilkan "sesuatu" di tab1
     with tab1:
         st.header("CNN Analysis")
         st.write("Here you can add the CNN program details.")
 
         # Tambahkan kode atau deskripsi untuk CNN Anda di sini
 
+    #Untuk menampilkan "sesuatu" di tab1
     with tab2:
         st.header("CNN + ResNet Analysis")
         st.write("Here you can add the CNN + ResNet program details.")
@@ -54,20 +56,20 @@ elif option == "CNN Analysis":
         [transforms.ToTensor()])
 
         # PAKE CODE YANG INI YAA, BUKAN YANG CELL ATAS
-def predict(image_path):
-  image = Image.open(image_path).convert('RGB')
-  image = transform(image)
-  image = image.unsqueeze(0)
+        def predict(image_path):
+          image = Image.open(image_path).convert('RGB')
+          image = transform(image)
+          image = image.unsqueeze(0)
 
-  with torch.no_grad():
-    output = model(image)
-    prediction = torch.max(output.data, 1)[1]
-    return prediction.item()
+        with torch.no_grad():
+            output = model(image)
+            prediction = torch.max(output.data, 1)[1]
+            return prediction.item()
 
-path = '/content/drive/MyDrive/DATASET CNN MULTIMOD/temp_dataset/cancer/A_1403_1.RIGHT_CC.png'
-result = predict(path)
+        path = '/content/drive/MyDrive/DATASET CNN MULTIMOD/temp_dataset/cancer/A_1403_1.RIGHT_CC.png'
+        result = predict(path)
 
-if result == 0:
-  print('benign')
-else:
-  print('malignant')
+        if result == 0:
+            print('benign')
+        else:
+            print('malignant')
