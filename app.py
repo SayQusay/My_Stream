@@ -64,6 +64,8 @@ if option == "Home":
     st.divider()
     st.subheader("Introducing our Community")
     url='https://drive.google.com/file/d/1WpfQIouo7zFhSSq-h0P-6xlga4rf8Ljg/view?usp=drivesdk'
+    image='Ardi.png'
+    st.image(image)
     content = """
     <a href='#' id='Ardi'><src='https://drive.google.com/file/d/1Wsst_64VkNZgOjWTxeytkqnXssNX9B_u/view?usp=drivesdk?w=200'></a>
     <a href='#' id='Bahari(5023211018)'><img width='20%' src='https://drive.google.com/file/d/1WpfQIouo7zFhSSq-h0P-6xlga4rf8Ljg/view?usp=drivesdk w=200'></a>
