@@ -22,7 +22,7 @@ if option == "Home":
     st.divider()
 
     #What can we Do
-    st.subheader("Developing technology to make :silver[automatic] :grey[detection]")
+    st.subheader("Developing technology to make :grey[automatic]detection")
     st.write("""
     Technological developments encourage the creation of more effective and efficient work systems. In the health sector, an early detection system is very much needed. Apart from making radiology work easier, experts can also more easily carry out interventions more quickly.
     - **Automatic Detection with CNN**
