@@ -15,9 +15,8 @@ if option == "Home":
 
     #Show the Urgency
     st.subheader("It's a :red[scary] thing for women")
+    st.markdown("<h4 style='text-align: center; color: #EB455F;'>Breast cancer is the most common cancer among women in 158 of 183 countries (86%) and the leading cause of female cancer deaths in 107 of 183 countries (Omer, A.M., et al, 2023)</h4>", unsafe_allow_html=True)
     st.write("""
-    Breast cancer is the most common cancer among women in 158 of 183 countries (86%) and the leading cause of female cancer deaths in 107 of 183 countries (Omer, A.M., et al, 2023).
-    
     In 2020, 2.3 million women were diagnosed with breast cancer, with 685,000 deaths globally. At the end of 2020, 7.8 million women who had been diagnosed with breast cancer in the previous five years were still alive, making breast cancer the most prevalent malignancy (Allahqoli et al., 2022)
     """)
     st.divider()
@@ -25,17 +24,16 @@ if option == "Home":
     #What can we Do
     st.subheader("Developing :grey[technology] to make automatic detection")
     st.write("""
-    Technological developments encourage the creation of more effective and efficient work systems. In the health sector, an early detection system is very much needed. Apart from being able to make radiology work easier, experts can also more easily carry out interventions more quickly.         - Tingkat stres tanpa disadari yang memengaruhi kesejahteraan secara keseluruhan.
+    Technological developments encourage the creation of more effective and efficient work systems. In the health sector, an early detection system is very much needed. Apart from making radiology work easier, experts can also more easily carry out interventions more quickly.
          - **Automatic Detection with CNN**
          CNNs can learn to recognize patterns and features in images that may not be visible to the human eye.
          
          - **Tumor Segmentation**:
-         CNNs can be used for tumor segmentation in medical images, helping determine tumor size and location more accurately.
+         CNNs can be used for tumor segmentation in medical images, helping more accurately determine tumor size and location.
          
          - **Risk Prediction**:
-         CNN-based algorithms can predict breast cancer risk based on analysis of medical images and other patient data, helping doctors make clinical decisions.
+         CNN-based algorithms can predict breast cancer risk by analyzing medical images and other patient data, helping doctors make clinical decisions.
     """)
-
     st.divider()
     
     st.subheader("Why do we use :green[CNN] instead of :red[ANN]")
@@ -46,7 +44,7 @@ if option == "Home":
     **CNN works best to extract image features automatically.** 
     CNN can learn the most discriminative feature from raw image pixels, which is needed in the model’s training process.
     
-    **CNN is insensitive to translation and different positions of input image.** 
+    **CNN is insensitive to translation and different positions of input images.** 
     Hence, unlike ANN, CNN could recognize patterns regardless of the position in the image. This quality is crucial to have for an accurate breast cancer classification.
     """)
 
@@ -59,7 +57,7 @@ if option == "Home":
     
     Residual Network (ResNet) is used for the architecture, where it utilizes the concept of skip connections, where the network will learn about the residual mapping of input to output rather than the entire mapping. Hence, the gradients calculated during backpropagation are not prone to vanishing. 
     
-    :green-background[In summary], CNN with ResNet offers an effective yet very deep training process without degrading the model’s accuracy performance.
+    :green-background[In summary], CNN with ResNet offers an effective yet intense training process without degrading the model’s accuracy performance.
     """)
 
 # Halaman CNN Analysis
