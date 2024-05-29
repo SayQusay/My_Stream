@@ -69,8 +69,8 @@ if option == "Home":
 elif option == "CNN Analysis":
     uploaded_file = st.file_uploader("Choose an image...", type="png")
 
-        if uploaded_file is not None:
-            image_path = uploaded_file.name
-            with open(image_path, "wb") as f:
-                f.write(uploaded_file.getbuffer())
+    if uploaded_file is not None:
+        image_path = uploaded_file.name
+        with open(image_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
        
