@@ -1,7 +1,7 @@
 import streamlit as st
 import torch
 from torchvision import transforms
-# from PIL import Image
+from PIL import Image
 
 
 # Konfigurasi halaman
@@ -72,7 +72,7 @@ elif option == "CNN Analysis":
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
         
-
+    
     col1,col2 = st.columns([0.3,0.7],gap='medium')
     
     with col1:
@@ -84,8 +84,6 @@ elif option == "CNN Analysis":
             ["MLO", "CC"],
             index=None,
         )
-
-        st.write("You selected:", view)
         st.divider()
         
         arc = st.radio(
@@ -93,19 +91,20 @@ elif option == "CNN Analysis":
             ["CNN", "ResNet18"],
             index=None,
         )
-        if arc == 'CNN':
-            if view == 'Mlo':
-                st.write('a')
-            else:
-                st.write('b')
-        else:
-            if view == 'Mlo':
-                st.write('C')
-            else:
-                st.write('d')
-        st.divider()
-        st.write("You selected:", arc)
         apply = st.button("Apply",type="secondary")
+        if apply:
+            if arc == 'CNN':
+                if view == 'Mlo':
+                    st.write('a')
+                else:
+                    st.write('b')
+            else:
+                if view == 'Mlo':
+                    st.write('C')
+                else:
+                    st.write('d')
+        st.divider()
+       
 
     with col2:
         st.markdown('''
