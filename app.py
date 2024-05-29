@@ -73,7 +73,7 @@ elif option == "CNN Analysis":
         image = Image.open(uploaded_file)
         
 
-    col1,col2 = st.column([0.3,0.7],gap='medium')
+    col1,col2 = st.columns([0.3,0.7],gap='medium')
     
     with col1:
         st.markdown('''
