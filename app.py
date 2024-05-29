@@ -1,7 +1,8 @@
 import streamlit as st
 import torch
 from torchvision import transforms
-# from PIL import Image
+from st_click_detector import click_detector
+
 
 # Konfigurasi halaman
 st.set_page_config(page_title="CNN for Breast Cancer", layout="wide")
@@ -59,6 +60,16 @@ if option == "Home":
     
     :green-background[In summary], CNN with ResNet offers an effective yet intense training process without degrading the model’s accuracy performance.
     """)
+
+    st.divider()
+    st.subheader("Introducing our Community")
+    content = """
+    <a href='#' id='Ardi'><img width='20%' src='https://drive.google.com/file/d/1Wsst_64VkNZgOjWTxeytkqnXssNX9B_u/view?usp=drivesdk'></a>
+    <a href='#' id='Bahari(5023211018)'><img width='20%' src='https://drive.google.com/file/d/1WpfQIouo7zFhSSq-h0P-6xlga4rf8Ljg/view?usp=drivesdk'></a>
+    """
+    clicked = click_detector(content)
+
+    st.markdown(f"**{clicked} clicked**" if clicked != "" else "**No click**")
 
 # Halaman CNN Analysis
 elif option == "CNN Analysis":
